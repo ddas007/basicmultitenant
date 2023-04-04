@@ -1,0 +1,20 @@
+{
+    "uaa": {
+        "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+        "clientid": "sb-basicmultitenant-auth!t151186",
+        "clientsecret": "VGrnAK146xyW3wFKEJ6t1WltIyo=",
+        "credential-type": "instance-secret",
+        "identityzone": "3d7d8527trial",
+        "identityzoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+        "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+        "service_key_name": "key",
+        "subaccountid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+        "tenantid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+        "tenantmode": "dedicated",
+        "uaadomain": "authentication.us10.hana.ondemand.com",
+        "url": "https://3d7d8527trial.authentication.us10.hana.ondemand.com",
+        "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwliRYHUHUlK8gPEjKYyT\nmwbZpgfulSoGM5+OQfdZxVFDdioWnbCUQfsURDMJjAV9372xLvmSRuziGkG7h5hx\ny7GDWSxMsL6NylCKfY4VANsfNGkUXSqRHM2MZ/GrANM5Z5JWEmnwRPUMWd1qOw3y\nqCAirHMh7zXr2iA9bmOQOxPopsOklnCqnbCnprMvixHILXL6UaJ0OxNNF4xIYQ9u\nMCWKruezQY+Q7rJvjZeeHjovWnOOYpYlp+rOPLv0uAVq6+jjiY6zdES7sNQs5y+8\nTDu6M0QEU0D3aqtVsacZWB1WVBa3xZW4c1bs33E6vavLFhOt+nxplG109jkgt6I1\nPwIDAQAB\n-----END PUBLIC KEY-----",
+        "xsappname": "basicmultitenant-auth!t151186",
+        "zoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1"
+    }
+}

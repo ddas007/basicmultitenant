@@ -1,0 +1,36 @@
+{
+    "xsuaa": [
+        {
+            "label": "xsuaa",
+            "provider": null,
+            "plan": "application",
+            "name": "basicmultitenant-xsuaa",
+            "tags": [
+                "xsuaa"
+            ],
+            "instance_guid": "7935966d-e1fa-408d-a165-9bd88b42abe4",
+            "instance_name": "basicmultitenant-xsuaa",
+            "binding_guid": "623eaa3c-2da7-466e-a357-420c00b51698",
+            "binding_name": null,
+            "credentials": {
+                "tenantmode": "dedicated",
+                "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+                "subaccountid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                "credential-type": "instance-secret",
+                "clientid": "sb-basicmultitenant-auth!t151186",
+                "xsappname": "basicmultitenant-auth!t151186",
+                "clientsecret": "VGrnAK146xyW3wFKEJ6t1WltIyo=",
+                "url": "https://3d7d8527trial.authentication.us10.hana.ondemand.com",
+                "uaadomain": "authentication.us10.hana.ondemand.com",
+                "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwliRYHUHUlK8gPEjKYyT\nmwbZpgfulSoGM5+OQfdZxVFDdioWnbCUQfsURDMJjAV9372xLvmSRuziGkG7h5hx\ny7GDWSxMsL6NylCKfY4VANsfNGkUXSqRHM2MZ/GrANM5Z5JWEmnwRPUMWd1qOw3y\nqCAirHMh7zXr2iA9bmOQOxPopsOklnCqnbCnprMvixHILXL6UaJ0OxNNF4xIYQ9u\nMCWKruezQY+Q7rJvjZeeHjovWnOOYpYlp+rOPLv0uAVq6+jjiY6zdES7sNQs5y+8\nTDu6M0QEU0D3aqtVsacZWB1WVBa3xZW4c1bs33E6vavLFhOt+nxplG109jkgt6I1\nPwIDAQAB\n-----END PUBLIC KEY-----",
+                "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+                "identityzone": "3d7d8527trial",
+                "identityzoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                "tenantid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                "zoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1"
+            },
+            "syslog_drain_url": null,
+            "volume_mounts": []
+        }
+    ]
+}

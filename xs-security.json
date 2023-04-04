@@ -1,0 +1,61 @@
+{
+    "xsappname": "basicmultitenant-auth",
+    "tenant-mode": "shared",
+    "scopes": [               
+        {
+            "name": "$XSAPPNAME.Callback",
+            "description": "With this scope set, the callbacks for tenant onboarding, offboarding and getDependencies can be called.",
+            "grant-as-authority-to-apps": [
+                "$XSAPPNAME(application,sap-provisioning,tenant-onboarding)"
+            ]
+        },
+        {
+            "name": "$XSAPPNAME.Admin",
+            "description": "Admin"
+        },
+        {
+            "name": "$XSAPPNAME.User",
+            "description": "User"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Admin",
+            "description": "Admin",
+            "scope-references": [
+                "$XSAPPNAME.Admin"
+            ]
+        },
+        {
+            "name": "User",
+            "description": "User",
+            "scope-references": [
+                "$XSAPPNAME.User"
+            ]
+        }
+    ],
+    "role-collections": [
+        {
+            "name": "BasicMultitenant_Admin",
+            "description": "My Basic NodeJs App Admin",
+            "role-template-references": [
+                "$XSAPPNAME.Admin",
+                "$XSAPPNAME.User"
+            ]
+        },
+        {
+            "name": "BasicMultitenant_User",
+            "description": "My Basic NodeJs App User",
+            "role-template-references": [
+                "$XSAPPNAME.User"
+            ]
+        }
+    ],
+    "oauth2-configuration": {
+        "redirect-uris": [
+            "https://*.trial.applicationstudio.cloud.sap/**",
+            "http://localhost:5000/**",
+            "https://*.hana.ondemand.com/**"
+        ]
+    }
+}

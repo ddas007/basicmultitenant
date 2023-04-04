@@ -1,0 +1,99 @@
+{
+    "services": {
+        "xsuaa": [
+            {
+                "label": "xsuaa",
+                "provider": null,
+                "plan": "application",
+                "name": "basicmultitenant-xsuaa",
+                "tags": [
+                    "xsuaa"
+                ],
+                "instance_guid": "7935966d-e1fa-408d-a165-9bd88b42abe4",
+                "instance_name": "basicmultitenant-xsuaa",
+                "binding_guid": "623eaa3c-2da7-466e-a357-420c00b51698",
+                "binding_name": null,
+                "credentials": {
+                    "tenantmode": "dedicated",
+                    "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+                    "subaccountid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                    "credential-type": "instance-secret",
+                    "clientid": "sb-basicmultitenant-auth!t151186",
+                    "xsappname": "basicmultitenant-auth!t151186",
+                    "clientsecret": "VGrnAK146xyW3wFKEJ6t1WltIyo=",
+                    "url": "https://3d7d8527trial.authentication.us10.hana.ondemand.com",
+                    "uaadomain": "authentication.us10.hana.ondemand.com",
+                    "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwliRYHUHUlK8gPEjKYyT\nmwbZpgfulSoGM5+OQfdZxVFDdioWnbCUQfsURDMJjAV9372xLvmSRuziGkG7h5hx\ny7GDWSxMsL6NylCKfY4VANsfNGkUXSqRHM2MZ/GrANM5Z5JWEmnwRPUMWd1qOw3y\nqCAirHMh7zXr2iA9bmOQOxPopsOklnCqnbCnprMvixHILXL6UaJ0OxNNF4xIYQ9u\nMCWKruezQY+Q7rJvjZeeHjovWnOOYpYlp+rOPLv0uAVq6+jjiY6zdES7sNQs5y+8\nTDu6M0QEU0D3aqtVsacZWB1WVBa3xZW4c1bs33E6vavLFhOt+nxplG109jkgt6I1\nPwIDAQAB\n-----END PUBLIC KEY-----",
+                    "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+                    "identityzone": "3d7d8527trial",
+                    "identityzoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                    "tenantid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                    "zoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1"
+                },
+                "syslog_drain_url": null,
+                "volume_mounts": []
+            }
+        ],
+        "saas-registry": [
+            {
+                "label": "saas-registry",
+                "provider": null,
+                "plan": "application",
+                "name": "basicmultitenant-registry",
+                "tags": [
+                    "SaaS"
+                ],
+                "instance_guid": "e5a34a7e-e1a2-4849-a677-be68922215f1",
+                "instance_name": "basicmultitenant-registry",
+                "binding_guid": "ed4cddd9-2bc2-461d-a0a9-689a848ccd84",
+                "binding_name": null,
+                "credentials": {
+                    "tenantmode": "dedicated",
+                    "sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+                    "subaccountid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                    "credential-type": "binding-secret",
+                    "clientid": "sb-basicmultitenant-clone!b151186|lps-registry-broker!b4",
+                    "xsappname": "basicmultitenant-auth",
+                    "appName": "basicmultitenant",
+                    "clientsecret": "ed4cddd9-2bc2-461d-a0a9-689a848ccd84$Ngy5nra8ifMk590j4IN3csslShvqdhDB-_5luq_QBCg=",
+                    "tenant_onboarding_url": "https://saas-manager.mesh.cf.us10.hana.ondemand.com",
+                    "saas_registry_url": "https://saas-manager.mesh.cf.us10.hana.ondemand.com",
+                    "appUrls": "{\"getDependencies\":\"\",\"onSubscription\":\"https://3d7d8527trial-dev-basicmultitenant-service.cfapps.us10-001.hana.ondemand.com/callback/v1.0/tenants/{tenantId}\",\"onSubscriptionAsync\":false,\"onUnSubscriptionAsync\":false,\"onUpdateSubscriptionParametersAsync\":false,\"callbackTimeoutMillis\":0,\"runGetDependenciesOnAsyncCallback\":false,\"onUpdateDependenciesAsync\":false}",
+                    "description": "My Saas Business Application",
+                    "display_name": "My Saas App Basicmultitenant",
+                    "url": "https://3d7d8527trial.authentication.us10.hana.ondemand.com",
+                    "uaadomain": "authentication.us10.hana.ondemand.com",
+                    "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwliRYHUHUlK8gPEjKYyT\nmwbZpgfulSoGM5+OQfdZxVFDdioWnbCUQfsURDMJjAV9372xLvmSRuziGkG7h5hx\ny7GDWSxMsL6NylCKfY4VANsfNGkUXSqRHM2MZ/GrANM5Z5JWEmnwRPUMWd1qOw3y\nqCAirHMh7zXr2iA9bmOQOxPopsOklnCqnbCnprMvixHILXL6UaJ0OxNNF4xIYQ9u\nMCWKruezQY+Q7rJvjZeeHjovWnOOYpYlp+rOPLv0uAVq6+jjiY6zdES7sNQs5y+8\nTDu6M0QEU0D3aqtVsacZWB1WVBa3xZW4c1bs33E6vavLFhOt+nxplG109jkgt6I1\nPwIDAQAB\n-----END PUBLIC KEY-----",
+                    "apiurl": "https://api.authentication.us10.hana.ondemand.com",
+                    "identityzone": "3d7d8527trial",
+                    "identityzoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                    "tenantid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                    "zoneid": "1d2c8f38-3b27-4947-aa99-89765e4359b1",
+                    "category": "Basicmultitenant Digital Partner Engineering"
+                },
+                "syslog_drain_url": null,
+                "volume_mounts": []
+            }
+        ]
+    },
+    "app": {
+		"cf_api": "https://api.cf.us10-001.hana.ondemand.com",
+		"limits": {
+			"fds": 32768
+		},
+		"application_name": "basicmultitenant-service",
+		"application_uris": [
+			"3d7d8527trial-dev-basicmultitenant-service.cfapps.us10-001.hana.ondemand.com"
+		],
+		"name": "basicmultitenant-service",
+		"space_name": "dev",
+		"space_id": "134cb7bb-ac69-4697-bf90-bc74b231e216",
+		"organization_id": "35b0a165-e897-462b-bb07-97ffa8a18d2d",
+		"organization_name": "3d7d8527trial",
+		"uris": [
+			"3d7d8527trial-dev-basicmultitenant-service.cfapps.us10-001.hana.ondemand.com"
+		],
+		"users": null,
+		"application_id": "012a9983-74c2-4762-9078-f706d86a999a"
+	}
+}

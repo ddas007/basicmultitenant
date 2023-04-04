@@ -1,0 +1,93 @@
+ID: basicmultitenant
+_schema-version: '3.1'
+version: 0.0.1
+parameters:
+  enable-parallel-deployments: true
+
+
+modules:
+  - name: basicmultitenant-service
+    type: nodejs
+    path: srv
+    build-parameters:
+      ignore:
+        - 'default-*.json'
+        - .env
+        - '*node_modules*'
+        - package-lock.json        
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}
+      - name: app_api
+        properties:
+          url: ${default-url}
+          application: ${app-name}
+    properties:
+      SAP_JWT_TRUST_ACL: 
+        - clientid": "*"
+          identityzone: "sap-provisioning"
+      
+      APP_API:        
+        - url: ${default-url}
+          application: ${app-name}
+    requires:
+      - name: basicmultitenant-xsuaa
+      - name: basicmultitenant-registry
+
+  - name: basicmultitenant-approuter
+    type: html5
+    path: app
+    build-parameters:
+      ignore:
+        - 'default-*.json'
+        - .env
+        - '*node_modules*'
+        - package-lock.json
+    parameters:
+      memory: 256M
+      disk-quota: 512M
+      keep-existing-routes: true
+    properties:
+      TENANT_HOST_PATTERN: '^(.*)-${space}-${app-name}.${default-domain}'
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api # must be used in xs-app.json as well
+          url: ~{srv-url}
+          forwardAuthToken: true
+
+      - name: basicmultitenant-xsuaa
+
+
+resources:
+  - name: basicmultitenant-xsuaa
+    type: org.cloudfoundry.managed-service
+    requires:
+      - name: app_api
+    properties:
+      XSAPPNAME: ${xsuaa-app}
+    parameters:       
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      xsuaa-app: ${space}-~{app_api/application}
+  
+  - name: basicmultitenant-registry
+    type: org.cloudfoundry.managed-service
+    requires:
+      - name: basicmultitenant-xsuaa
+      - name: app_api    
+    parameters:
+      service: saas-registry
+      service-plan: application
+      service-name: basicmultitenant-registry
+      config:
+        xsappname: "basicmultitenant-auth"
+        appName: basicmultitenant
+        displayName: 'My Saas App Basicmultitenant'
+        description: 'My Saas Business Application'
+        category: 'Basicmultitenant Digital Partner Engineering'
+        appUrls:
+          onSubscription: https://${org}-${space}-~{app_api/application}.${default-domain}/callback/v1.0/tenants/{tenantId}
